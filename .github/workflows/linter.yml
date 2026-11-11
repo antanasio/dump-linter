@@ -41,6 +41,10 @@ jobs:
         id: install
         run: npm ci
 
+      - name: Check Format
+        id: npm-format-check
+        run: npm run format:write
+
       - name: Lint Codebase
         id: super-linter
         uses: super-linter/super-linter/slim@v8
