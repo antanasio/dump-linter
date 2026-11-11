@@ -1,5 +1,17 @@
 # Create a GitHub Action Using TypeScript
 
+## Intentionally Vulnerable CodeQL Demo
+
+[src/intentionally-vulnerable-sql-demo.ts](src/intentionally-vulnerable-sql-demo.ts)
+contains an Express route that concatenates a query parameter into a PostgreSQL
+query. This is intentionally unsafe source for testing CodeQL SQL-injection
+detection. Do not deploy it or import it into the Action's entry point. The
+credentials are dummy values, and the file does not start an HTTP listener.
+
+The existing CodeQL workflow scans `src` on pushes and pull requests targeting
+`main`. A scan is required to confirm the finding; dummy credentials do not
+guarantee a secret-scanning alert.
+
 ![Linter](https://github.com/actions/typescript-action/actions/workflows/linter.yml/badge.svg)
 ![CI](https://github.com/actions/typescript-action/actions/workflows/ci.yml/badge.svg)
 ![Check dist/](https://github.com/actions/typescript-action/actions/workflows/check-dist.yml/badge.svg)
