@@ -55,7 +55,7 @@ jobs:
       - name: Production Build
         run: npm run package
 
-      # Step 9: Automated Testing & Reporting
+      # Step 9: Automated Testing & Reporting #2
       - name: Run Automated Tests
         run: npm test -- --coverage # Generates test execution and coverage data
 
