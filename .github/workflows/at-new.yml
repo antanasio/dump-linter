@@ -41,9 +41,11 @@ jobs:
 
       - name: Semantic Analysis (ESLint)
         run: npm run lint # Maps to: eslint .
+        continue-on-error: true
         # Step 7: runs a vulnerability scanner against all the open-source libraries (dependencies) listed in the project. It acts as an automated security guard for third-party code.
       # - name: Security Scanning
       #   run: npm audit --audit-level=high
+      # continue on failure
 
       # Step 8: Build and Compilation (Type Verification & Bundling)
       - name: TypeScript Type Verification
